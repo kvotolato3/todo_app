@@ -42,7 +42,7 @@ class TodoItemsController < ApplicationController
   def update
     respond_to do |format|
       if @todo_item.update(todo_item_params)
-        format.html { redirect_to @todo_item, notice: 'Todo item was successfully updated.' }
+        format.html { redirect_to todo_items_path, notice: 'Todo item was successfully updated.' }
         format.json { render :show, status: :ok, location: @todo_item }
       else
         format.html { render :edit }
@@ -67,7 +67,6 @@ class TodoItemsController < ApplicationController
       @todo_item = TodoItem.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def todo_item_params
       params.require(:todo_item).permit(:text, :completed_at)
     end

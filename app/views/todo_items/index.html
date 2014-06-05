@@ -1,8 +1,18 @@
-<script id="todo_item_template" type="text/x-handlebars-template">
+<script id="todo_template" type="text/x-handlebars-template">
 <tr>
   <td>{{created_at}}</td>
   <td>{{text}}</td>
-  <td id='complete-item-button'><button class='btn btn-small btn-default'>Complete</button></td>
+  <td id='{{id}}'><button class='btn btn-small btn-default complete-button'>Complete</button></td>
+  <td id='delete-item-button'><button class='btn btn-small btn-default'>Delete</button></td>
+</tr>
+</script>
+
+<script id="complete_template" type="text/x-handlebars-template">
+<tr>
+  <td>{{created_at}}</td>
+  <td>{{completed_at}}</td>
+  <td>{{text}}</td>
+  <td id='{{id}}'><button class='btn btn-small btn-default complete-button'>Undo</button></td>
   <td id='delete-item-button'><button class='btn btn-small btn-default'>Delete</button></td>
 </tr>
 </script>

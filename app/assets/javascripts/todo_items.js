@@ -5,6 +5,7 @@ $(document).ready(function(){
   $('#unfinished-list').on('click', '.complete-button', TodoApp.completeItem);
   $('#unfinished-list').on('click', '.delete-button', TodoApp.deleteItem);
   $('#finished-list').on('click', '.delete-button', TodoApp.deleteItem);
+  $('#finished-list').on('click', '.undo-button', TodoApp.undoItem);
 });
 
 var TodoApp = {
@@ -65,6 +66,15 @@ var TodoApp = {
       url: 'http://localhost:3000/todo_items/' + itemId,
       type: 'DELETE',
       dataType: 'json',
+    }).done(TodoApp.getAllTodos);
+  },
+  undoItem: function(event){
+    var itemId = this.parentElement.id;
+    $.ajax({
+      url: 'http://localhost:3000/todo_items/' + itemId,
+      type: 'PATCH',
+      dataType: 'json',
+      data: {todo_item: {completed_at: null}}
     }).done(TodoApp.getAllTodos);
   }
 };

@@ -3,6 +3,8 @@ $(document).ready(function(){
   TodoApp.getAllTodos();
   $('#create-new-item-button').click(TodoApp.addNewItem);
   $('#unfinished-list').on('click', '.complete-button', TodoApp.completeItem);
+  $('#unfinished-list').on('click', '.delete-button', TodoApp.deleteItem);
+  $('#finished-list').on('click', '.delete-button', TodoApp.deleteItem);
 });
 
 var TodoApp = {
@@ -55,6 +57,14 @@ var TodoApp = {
       type: 'PATCH',
       dataType: 'json',
       data: {todo_item: {completed_at: new Date()}}
+    }).done(TodoApp.getAllTodos);
+  },
+  deleteItem: function(event){
+    var itemId = this.parentElement.id;
+    $.ajax({
+      url: 'http://localhost:3000/todo_items/' + itemId,
+      type: 'DELETE',
+      dataType: 'json',
     }).done(TodoApp.getAllTodos);
   }
 };

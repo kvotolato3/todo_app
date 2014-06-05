@@ -22,14 +22,14 @@ var TodoApp = {
   },
 
   completeButton: function(){
-    var attributes = {'id':"complete-item-button", 'href':"#"};
-    var newElement = $('<a>').addClass("btn btn-small btn-default").attr(attributes).text("Complete");
+    var attributes = {'id':"complete-item-button"};
+    var newElement = $('<button>').addClass("btn btn-small btn-default").attr(attributes).text("Complete");
     return newElement;
   },
 
   deleteButton: function(){
-    var attributes = {'id':"delete-item-button", 'href':"#"};
-    var newElement = $('<a>').addClass("btn btn-small btn-default").attr(attributes).text("Delete");
+    var attributes = {'id':"delete-item-button"};
+    var newElement = $('<button>').addClass("btn btn-small btn-default").attr(attributes).text("Delete");
     return newElement;
   }
 };

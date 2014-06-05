@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
   TodoApp.getAllTodos();
   $('#create-new-item-button').click(TodoApp.addNewItem);
@@ -15,9 +16,12 @@ var TodoApp = {
     var arrayLength = items.length;
     $('.list-item').remove();
     for (var i = 0; i < arrayLength; i = i + 1) {
-      var item = items[i];
-      var listItem = TodoApp.listElement(item);
-      $('#unfinished-list').append(listItem);
+      var todo_item = items[i];
+// Handlebars
+      var source = $('#todo_item_template').html();
+      var template = Handlebars.compile(source);
+      var todo_item_html = template(todo_item);
+      $('#unfinished-list').append(todo_item_html);
     }
   },
 

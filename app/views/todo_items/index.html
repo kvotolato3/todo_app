@@ -1,5 +1,10 @@
 <script id="todo_item_template" type="text/x-handlebars-template">
-<li>{{text}}</li>
+<tr>
+  <td>{{created_at}}</td>
+  <td>{{text}}</td>
+  <td id='complete-item-button'><button class='btn btn-small btn-default'>Complete</button></td>
+  <td id='delete-item-button'><button class='btn btn-small btn-default'>Delete</button></td>
+</tr>
 </script>
 
 
@@ -15,13 +20,12 @@
   <div class='row'>
     <div class='col-md-6'>
       <h2>Finished Items</h2>
-        <ul id='finished-list' class='text-left'></ul>
+        <table class='table' id="finished-list"></table>
     </div>
     <div class='col-md-6'>
       <h2>Unfinished Items</h2>
-        <ul id='unfinished-list' class='text-left'></ul>
+        <table class='table' id="unfinished-list"></table>
     </div>
   </div>
 </div>
-
 

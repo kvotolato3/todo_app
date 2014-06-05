@@ -15,7 +15,8 @@ var TodoApp = {
 
   displayLists: function(items){
     var arrayLength = items.length;
-    $('.list-item').remove();
+    $('#finished-list').empty();
+    $('#unfinished-list').empty();
     for (var i = 0; i < arrayLength; i = i + 1) {
     var todo_item = items[i];
       if (todo_item.completed_at === null){
@@ -52,6 +53,7 @@ var TodoApp = {
     $.ajax({
       url: 'http://localhost:3000/todo_items/' + itemId,
       type: 'PATCH',
+      dataType: 'json',
       data: {todo_item: {completed_at: new Date()}}
     }).done(TodoApp.getAllTodos);
   }

@@ -16,7 +16,7 @@ var TodoApp = {
   },
 
   listElement: function(item){
-    newElement = $('<li>').addClass('list-item').attr('id', item.id) ;
+    newElement = $('<tr>').addClass('list-item').attr('id', item.id) ;
     newElement.html(item.created_at.toLocaleString() + " | " + item.text + " | ").append(TodoApp.completeButton()).append(TodoApp.deleteButton());
     return newElement;
   },

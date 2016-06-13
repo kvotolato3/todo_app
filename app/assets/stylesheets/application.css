@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+#ajaxSpinnerContainer {
+  height:11px;
+}
+#ajaxSpinnerImage {
+  display:none;
+}
+

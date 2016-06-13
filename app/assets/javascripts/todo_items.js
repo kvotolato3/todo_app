@@ -18,8 +18,8 @@ var TodoApp = {
 
   displayLists: function(items){
     var arrayLength = items.length;
-    $('#finished-list').empty();
-    $('#unfinished-list').empty();
+    $('.items').empty();
+    $('.items').empty();
     for (var i = 0; i < arrayLength; i = i + 1) {
     var todo_item = items[i];
     todo_item.created_at = moment(todo_item.created_at).fromNow();

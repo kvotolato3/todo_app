@@ -22,6 +22,7 @@ var TodoApp = {
     $('#unfinished-list').empty();
     for (var i = 0; i < arrayLength; i = i + 1) {
     var todo_item = items[i];
+    todo_item.created_at = moment(todo_item.created_at).fromNow();
       if (todo_item.completed_at === null){
         // Handlebars
         var source = $('#todo_template').html();
@@ -30,6 +31,7 @@ var TodoApp = {
         $('#unfinished-list').append(todo_item_html);
       }
       else {
+        todo_item.completed_at = moment(todo_item.completed_at).fromNow();
         var source = $('#complete_template').html();
         var template = Handlebars.compile(source);
         var todo_item_html = template(todo_item);

@@ -40,8 +40,11 @@ class TodoItemsController < ApplicationController
   # PATCH/PUT /todo_items/1
   # PATCH/PUT /todo_items/1.json
   def update
+      if js_time = params[:todo_item][:completed_at]
+        @todo_item.completed_at = js_time.to_time
+      end
     respond_to do |format|
-      if @todo_item.update(todo_item_params)
+      if @todo_item.save
         format.html { redirect_to todo_items_path, notice: 'Todo item was successfully updated.' }
         format.json { render :show, status: :ok, location: @todo_item }
       else

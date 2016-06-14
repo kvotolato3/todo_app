@@ -2,7 +2,7 @@
 <tr class='items'>
   <td>{{created_at}}</td>
   <td>{{text}}</td>
-  <td id='{{id}}'><button class='btn btn-small btn-default complete-button'>Complete</button></td>
+  <td id='{{id}}'><button class='btn btn-small btn-warning complete-button'>Complete</button></td>
   <td id='{{id}}'><button class='btn btn-small btn-danger delete-button'>Delete</button></td>
 </tr>
 </script>
@@ -12,7 +12,7 @@
   <td>{{created_at}}</td>
   <td>{{completed_at}}</td>
   <td>{{text}}</td>
-  <td id='{{id}}'><button class='btn btn-small btn-default undo-button'>Undo</button></td>
+  <td id='{{id}}'><button class='btn btn-small btn-info undo-button'>Undo</button></td>
   <td id='{{id}}'><button class='btn btn-small btn-danger delete-button'>Delete</button></td>
 </tr>
 </script>
@@ -31,8 +31,7 @@
 
     <form id='new-item-form'>
       <input type="text" placeholder="Type next item here" id='new-item'></input>
-<!--       <a href="#"  >Create</a> -->
-      <input type="submit" value="Create" class="btn btn-lg btn-default"id='create-new-item-button'>
+      <input type="submit" value="Create" class="btn btn-small btn-primary"id='create-new-item-button'>
     </form>
   </div>
   <div class='row'>

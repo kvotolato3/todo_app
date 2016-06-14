@@ -12,7 +12,7 @@ var TodoApp = {
 
   getAllTodos: function(){
     $.ajax({
-    url: 'http://localhost:3000/todo_items.json'
+    url: '/todo_items.json'
     }).done(TodoApp.displayLists);
   },
 
@@ -46,7 +46,7 @@ var TodoApp = {
 
     if ($itemInput!== '') {
      $.ajax({
-      url: 'http://localhost:3000/todo_items',
+      url: '/todo_items',
       type: 'POST',
       dataType: 'json',
       data:  {todo_item: {text: $itemInput}}
@@ -56,7 +56,7 @@ var TodoApp = {
   completeItem: function(event){
     var itemId = this.parentElement.id;
     $.ajax({
-      url: 'http://localhost:3000/todo_items/' + itemId,
+      url: '/todo_items/' + itemId,
       type: 'PATCH',
       dataType: 'json',
       data: {todo_item: {completed_at: new Date()}}
@@ -65,7 +65,7 @@ var TodoApp = {
   deleteItem: function(event){
     var itemId = this.parentElement.id;
     $.ajax({
-      url: 'http://localhost:3000/todo_items/' + itemId,
+      url: '/todo_items/' + itemId,
       type: 'DELETE',
       dataType: 'json',
     }).done(TodoApp.getAllTodos);
@@ -73,7 +73,7 @@ var TodoApp = {
   undoItem: function(event){
     var itemId = this.parentElement.id;
     $.ajax({
-      url: 'http://localhost:3000/todo_items/' + itemId,
+      url: '/todo_items/' + itemId,
       type: 'PATCH',
       dataType: 'json',
       data: {todo_item: {completed_at: null}}

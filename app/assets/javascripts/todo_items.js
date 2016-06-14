@@ -50,7 +50,7 @@ var TodoApp = {
       type: 'POST',
       dataType: 'json',
       data:  {todo_item: {text: $itemInput}}
-     }).done(TodoApp.getAllTodos);
+     }).done([TodoApp.getAllTodos, TodoApp.clearForm]);
     }
   },
   completeItem: function(event){
@@ -78,6 +78,9 @@ var TodoApp = {
       dataType: 'json',
       data: {todo_item: {completed_at: null}}
     }).done(TodoApp.getAllTodos);
+  },
+  clearForm: function(event){
+    $('#new-item').val('');
   }
 };
 

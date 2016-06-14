@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
   TodoApp.getAllTodos();
-  $('#create-new-item-button').click(TodoApp.addNewItem);
+  $('#new-item-form').submit(TodoApp.addNewItem);
   $('#unfinished-list').on('click', '.complete-button', TodoApp.completeItem);
   $('#unfinished-list').on('click', '.delete-button', TodoApp.deleteItem);
   $('#finished-list').on('click', '.delete-button', TodoApp.deleteItem);

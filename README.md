@@ -1,4 +1,6 @@
-wdi_7_hw_ajax_handlebars_todo
+To Do List App
 =============================
 
-Re-create your Todo app using Rails, Ajax and Handlebars. 
+A To Do List app using Rails, Ajax and Handlebars.
+
+This was a homework assignment from General Assembly's Web Development Immersive (WDI) program.
